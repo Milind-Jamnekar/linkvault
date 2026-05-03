@@ -35,13 +35,21 @@ docker stop linkvault-db
 docker start linkvault-db
 ```
 
-### 4. Run Prisma migrations
+### 4. Generate Prisma client
+
+The generated Prisma client (`src/prisma/generated/`) is not committed to git. Run this after every `git clone` or schema change:
+
+```bash
+pnpm prisma generate
+```
+
+### 5. Run Prisma migrations
 
 ```bash
 pnpm prisma migrate dev
 ```
 
-### 5. Start the app
+### 6. Start the app
 
 ```bash
 # watch mode
